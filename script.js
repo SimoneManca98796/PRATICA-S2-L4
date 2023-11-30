@@ -2,12 +2,12 @@
  Scrivi una funzione di nome "area", che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato.
 */
 function area(l1 = 3, l2 = 2) {
-    const result = l1 * l2
-    return result
+  const result = l1 * l2;
+  return result;
 }
 
-const areaRettangolo = area()
-console.log("l'area del rettangolo è " , areaRettangolo)
+const areaRettangolo = area();
+console.log("l'area del rettangolo è ", areaRettangolo);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 2
@@ -17,17 +17,17 @@ console.log("l'area del rettangolo è " , areaRettangolo)
 */
 
 function crazySum(num1 = 10, num2 = 10) {
-    if (num1 === num2) {
-        return 3 * (num1 + num2);
-        // se i due parametri hanno lo stesso valore
-    } else {
-        return num1 + num2;
-    }
+  if (num1 === num2) {
+    return 3 * (num1 + num2);
+    // se i due parametri hanno lo stesso valore
+  } else {
+    return num1 + num2;
+  }
 }
 
-const crazySuma = crazySum()
+const crazySuma = crazySum();
 
-console.log('la somma dei due parametri è ' , crazySuma)
+console.log("la somma dei due parametri è ", crazySuma);
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 3
@@ -35,18 +35,27 @@ console.log('la somma dei due parametri è ' , crazySuma)
  Deve inoltre tornare la differenza assoluta moltiplicata per tre qualora il numero fornito sia maggiore di 19.
 */
 
-
 function crazyDiff(number = 15) {
-    const absoluteDifference = Math.abs(number - 19)
-    if(number > 19) {
+  const absoluteDifference = Math.abs(number - 19);
+  if (number > 19) {
+    return absoluteDifference * 3;
+  } else {
+    return absoluteDifference;
+  }
+}
+
+/*function crazyDiff(number = 15) {
+    let absoluteDifference = number - 19
+    if(absoluteDifference > 0) {
+        diff
     return absoluteDifference * 3
 } else {
     return absoluteDifference
  } 
-}
+}*/
 
-const absoluteDifference = crazyDiff()
-console.log("La differenza assoluta è" , absoluteDifference)
+const absoluteDifference = crazyDiff();
+console.log("La differenza assoluta è", absoluteDifference);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -56,15 +65,15 @@ console.log("La differenza assoluta è" , absoluteDifference)
 */
 
 function boundary(n = 5) {
-    if( (n >= 20 && n <= 100) || n === 400) {
-        return true
-    } else {
-        return false
-    }
+  if ((n >= 20 && n <= 100) || n === 400) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-const boundaryy = boundary()
-console.log('boundary' , boundaryy)
+const boundaryy = boundary();
+console.log("boundary", boundaryy);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -86,16 +95,24 @@ console.log('boundary' , boundaryy)
 const epifyy = epify()
 console.log('epify' , epifyy)*/
 
-function epify(string) {
-    if (string.startsWith("EPICODE")) {
-        return string;
-    } else {
-        return "EPICODE" + string;
-    }
-}
+/*function epify(string) {
+  if (string.startsWith("EPICODE")) {
+    return string;
+  } else {
+    return "EPICODE" + string;
+  }
+}*/
 
-const epifyy = epify()
-console.log('epify' , epifyy)
+const epify = function (string) {
+  if (string !== "EPICODE") {
+    return "EPICODE".concat(string);
+  } else {
+    return string;
+  }
+};
+
+const epifyy = epify(" ciao, mi chiamo Simone");
+console.log("epify", epifyy);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -104,12 +121,22 @@ console.log('epify' , epifyy)
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
 
-function check3and7(positive) {
+/* function check3and7(positive) {
     return positive > 0 && (positive % 3 === 0 || positive % 7 === 0);
 }
 
 const checkband = check3and7()
-console.log("positive" , check3and7)
+console.log("positive" , check3and7) */
+
+function check3and7(num) {
+  if (num % 3 === 0 || num % 7 === 0) {
+    console.log("MULTIPLO DI 3 O 7");
+  } else {
+    console.log("NON MULTIPLO DI 3 O 7");
+  }
+} // non uso i return perchè chiede solo due condizioni
+
+check3and7(49);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -119,25 +146,45 @@ console.log("positive" , check3and7)
 /*function reverseString*/
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const reverseString = function (str) {
+  const arrayOfChars = str.split(""); // traforma la stringa(str) in un array --> lo converto in un array
+  // "ciao" ---> ['c' , 'i' , 'a' , 'o']
+  arrayOfChars.reverse(); // inverte l'array
+  // ['o', 'i', 'a', 'c' ]
+  // ritraformare quest'array in una stringa
+  const reversedString = arrayOfChars.join();
+  return reversedString;
+};
+
+console.log(reverse("EPICODE")); // 'EDOCIPE'
+
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
-function upperFirst(string) {
-    const words = string.split(' ');
-}
+/* function upperFirst(string) {
+  const words = string.split(" ");
+} */
+
+const upperFirst = function (sentence) {
+  const arrayOfWords = sentence.split(" ");
+  // ['ciao', 'mi', 'chiamo', 'stefano']
+  const arrayUpperCaseWords = [];
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    let UpperCaseWord =
+      arrayOfWords[i].slice(0, 1).toUpperCase() + arrayOfWords[i].slice(1);
+    arrayUpperCaseWords.push(arrayUpperCaseWord);
+  }
+};
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
-function cutString(string) {
-    return string.slice(1, -1);
-}
-
-
-
+/*function cutString(string) {
+  return string.slice(1, -1);
+}*/
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -146,19 +193,18 @@ function cutString(string) {
 */
 
 function giveMeRandom(n) {
-    const randomArray = [];
-    for (let i = 0; i < n; i++) {
-        const randomNumber = Math.floor(Math.random() * 11); // numero casuale tra 0 and 10
-        randomArray.push(randomNumber);
-    }
-    return randomArray;
+  const randomArray = [];
+  for (let i = 0; i < n; i++) {
+    const randomNumber = Math.floor(Math.random() * 11); // numero casuale tra 0 and 10
+    randomArray.push(randomNumber);
+  }
+  return randomArray;
 }
 
-const random = giveMeRandom()
-console.log("random" , random)
+const random = giveMeRandom();
+console.log("random", random);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
 
 // ESERCIZI EXTRA:
 // Esercizi aggiuntivi (facoltativi) per D4
@@ -170,21 +216,19 @@ console.log("random" , random)
 */
 
 function checkArray(arr) {
-    let sommaMaggioreDi5 = 0;
+  let sommaMaggioreDi5 = 0;
 
-    arr.forEach(function(item) {
-        if (item > 5) {
-            console.log(item + " è maggiore di 5");
-            sommaMaggioreDi5 += item;
-        } else {
-            console.log(item + " non è maggiore di 5");
-        }
-    });
+  arr.forEach(function (item) {
+    if (item > 5) {
+      console.log(item + " è maggiore di 5");
+      sommaMaggioreDi5 += item;
+    } else {
+      console.log(item + " non è maggiore di 5");
+    }
+  });
 
-    return sommaMaggioreDi5;
+  return sommaMaggioreDi5;
 }
-
-
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
