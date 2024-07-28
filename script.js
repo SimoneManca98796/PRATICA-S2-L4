@@ -1,14 +1,14 @@
 /* ESERCIZIO 1
  Scrivi una funzione di nome "area", che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato.
 */
-function area(l1 = 3, l2 = 2) {
+/* SCRIVI QUI LA TUA RISPOSTA */
+
+const areaRettangolo = function (l1, l2) {
   const result = l1 * l2;
   return result;
-}
+};
 
-const areaRettangolo = area();
-console.log("l'area del rettangolo è ", areaRettangolo);
-/* SCRIVI QUI LA TUA RISPOSTA */
+console.log("l'area è ", areaRettangolo(5, 10)); // l'area è 50
 
 /* ESERCIZIO 2
  Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri.
@@ -16,66 +16,52 @@ console.log("l'area del rettangolo è ", areaRettangolo);
  la loro somma moltiplicata per tre.
 */
 
-function crazySum(num1 = 10, num2 = 10) {
+const crazySum = function (num1 = 10, num2 = 15) {
   if (num1 === num2) {
-    return 3 * (num1 + num2);
-    // se i due parametri hanno lo stesso valore
+    return (num1 + num2) * 3;
   } else {
     return num1 + num2;
   }
-}
+};
 
-const crazySuma = crazySum();
-
-console.log("la somma dei due parametri è ", crazySuma);
-/* SCRIVI QUI LA TUA RISPOSTA */
+console.log(crazySum(10, 15)); // Output: 25
+console.log(crazySum(5, 5)); // Output: 30
 
 /* ESERCIZIO 3
  Scrivi una funzione di nome "crazyDiff" che calcola la differenza assoluta tra un numero fornito come parametro e 19.
  Deve inoltre tornare la differenza assoluta moltiplicata per tre qualora il numero fornito sia maggiore di 19.
 */
 
-function crazyDiff(number = 15) {
-  const absoluteDifference = Math.abs(number - 19);
-  if (number > 19) {
-    return absoluteDifference * 3;
+const crazyDiff = function (num1) {
+  const diff = Math.abs(num1 - 19);
+  if (diff < 19) {
+    return diff * 3;
   } else {
-    return absoluteDifference;
+    return diff;
   }
-}
+};
 
-/*function crazyDiff(number = 15) {
-    let absoluteDifference = number - 19
-    if(absoluteDifference > 0) {
-        diff
-    return absoluteDifference * 3
-} else {
-    return absoluteDifference
- } 
-}*/
-
-const absoluteDifference = crazyDiff();
-console.log("La differenza assoluta è", absoluteDifference);
-
-/* SCRIVI QUI LA TUA RISPOSTA */
+console.log(crazyDiff(10)); // Output: 9 (differenza assoluta: 19 - 10 = 9)
+console.log(crazyDiff(19)); // Output: 0 (19 - 19 = 0)
+console.log(crazyDiff(22)); // Output: 9 (22 - 19 = 3, 3 * 3 = 9)
 
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
  se n è uguale a 400.
 */
 
-function boundary(n = 5) {
+const boundary = function (n) {
   if ((n >= 20 && n <= 100) || n === 400) {
     return true;
   } else {
     return false;
   }
-}
-
-const boundaryy = boundary();
-console.log("boundary", boundaryy);
-
-/* SCRIVI QUI LA TUA RISPOSTA */
+};
+console.log("boundary", boundary(25)); // Output: true
+console.log("boundary", boundary(10)); // Output: false
+console.log("boundary", boundary(100)); // Output: true
+console.log("boundary", boundary(400)); // Output: true
+console.log("boundary", boundary(200)); // Output: false
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
@@ -83,36 +69,23 @@ console.log("boundary", boundaryy);
  ritornare la stringa originale senza alterarla.
 */
 
-/*function epify(string) {
-         const epicodeString = 'EPICODE'
-         if(string.substring(0, epicodeString.length) === epicodeString){
-         return string
-} else { 
-    return epicodeString + string 
- } 
-}
-
-const epifyy = epify()
-console.log('epify' , epifyy)*/
-
-/*function epify(string) {
-  if (string.startsWith("EPICODE")) {
-    return string;
-  } else {
-    return "EPICODE" + string;
-  }
-}*/
-
 const epify = function (string) {
-  if (string !== "EPICODE") {
-    return "EPICODE".concat(string);
+  if (!string.startsWith("EPICODE")) {
+    // Il metodo .startsWith() è un metodo disponibile sulle stringhe in JavaScript.
+    //  Viene utilizzato per determinare se una stringa inizia
+    //con i caratteri di un'altra stringa, restituendo true o false in base al risultato
+    return "EPICODE " + string; // Aggiungi uno spazio tra "EPICODE" e la stringa
   } else {
-    return string;
+    return string; // Ritorna la stringa originale se già inizia con "EPICODE"
   }
 };
 
-const epifyy = epify(" ciao, mi chiamo Simone");
-console.log("epify", epifyy);
+// Esempi di utilizzo
+const epifyy = epify("ciao, mi chiamo Simone");
+console.log("epify", epifyy); // Output: "EPICODE ciao, mi chiamo Simone"
+
+const epifyy2 = epify("EPICODE è una scuola di coding");
+console.log("epify", epifyy2); // Output: "EPICODE è una scuola di coding"
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -121,61 +94,54 @@ console.log("epify", epifyy);
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
 
-/* function check3and7(positive) {
-    return positive > 0 && (positive % 3 === 0 || positive % 7 === 0);
-}
-
-const checkband = check3and7()
-console.log("positive" , check3and7) */
-
-function check3and7(num) {
-  if (num % 3 === 0 || num % 7 === 0) {
-    console.log("MULTIPLO DI 3 O 7");
+const check3and7 = function (positive) {
+  if (positive > 0) {
+    return positive % 3 === 0 || positive % 7 === 0;
   } else {
-    console.log("NON MULTIPLO DI 3 O 7");
+    return false;
   }
-} // non uso i return perchè chiede solo due condizioni
+};
 
-check3and7(49);
-
-/* SCRIVI QUI LA TUA RISPOSTA */
+// Esempi di utilizzo
+console.log("check3and7", check3and7(35)); // Output: true
+console.log("check3and7", check3and7(21)); // Output: true
+console.log("check3and7", check3and7(10)); // Output: false
+console.log("check3and7", check3and7(-7)); // Output: false
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
-/*function reverseString*/
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const reverseString = function (str) {
-  const arrayOfChars = str.split(""); // traforma la stringa(str) in un array --> lo converto in un array
-  // "ciao" ---> ['c' , 'i' , 'a' , 'o']
-  arrayOfChars.reverse(); // inverte l'array
-  // ['o', 'i', 'a', 'c' ]
-  // ritraformare quest'array in una stringa
-  const reversedString = arrayOfChars.join();
+  const arrayOfChars = str.split(""); // split: metodo che trasforma una stringa in un array di caratteri singoli
+  // esempio "ciao" --> ["c", "i", "a", "o"]
+  arrayOfChars.reverse(); // inverte l'array quindi [c i a o] ---> [o i a c]
+  const reversedString = arrayOfChars.join(""); // riunisce i singoli elementi dell'array in un unico array
   return reversedString;
 };
 
-console.log(reverse("EPICODE")); // 'EDOCIPE'
+console.log(reverseString("epicode")); // OUTPUT: edocipe
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
-/* function upperFirst(string) {
-  const words = string.split(" ");
-} */
 
 const upperFirst = function (sentence) {
-  const arrayOfWords = sentence.split(" ");
+  const arrayOfWords = sentence.split(" "); // con lo spazio non rende caratteri singoli di parole
   // ['ciao', 'mi', 'chiamo', 'stefano']
   const arrayUpperCaseWords = [];
   for (let i = 0; i < arrayOfWords.length; i++) {
     let UpperCaseWord =
-      arrayOfWords[i].slice(0, 1).toUpperCase() + arrayOfWords[i].slice(1);
-    arrayUpperCaseWords.push(arrayUpperCaseWord);
+      arrayOfWords[i].slice(0, 1).toUpperCase() + arrayOfWords[i].slice(1); // "C" + "iao"
+    arrayUpperCaseWords.push(UpperCaseWord);
   }
+  return arrayUpperCaseWords.join(" ");
 };
+
+console.log(upperFirst("ciao mi chiamo Simone")); // OUTPUT: Ciao Mi Chiamo Simone
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 9
@@ -192,17 +158,14 @@ const upperFirst = function (sentence) {
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-function giveMeRandom(n) {
-  const randomArray = [];
-  for (let i = 0; i < n; i++) {
-    const randomNumber = Math.floor(Math.random() * 11); // numero casuale tra 0 and 10
-    randomArray.push(randomNumber);
+const giveMeRandom = function (n) {
+  const arrays = [];
+  for (i = 0; i < n; i++) {
+    const randomNumber = Math.floor(Math.random() * 11);
+    arrays.push(randomNumber);
   }
-  return randomArray;
-}
-
-const random = giveMeRandom();
-console.log("random", random);
+  return arrays;
+};
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
