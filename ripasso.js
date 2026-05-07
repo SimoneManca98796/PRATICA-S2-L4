@@ -55,20 +55,63 @@ const cars = [
   },
 ];
 
+const targhe = function (targa) {
+  for (let i = 0; i < cars.length; i++) {
+    cars[i].licensePlate = targa;
+  }
+  return cars;
+};
+
+console.log(targhe("ABC 632 DED"));
+console.log(targhe("WDW 342 CEE"));
+console.log(targhe("588 MMM 888"));
+
 /* ESERCIZIO 6
     Scrivi del codice per aggiungere un nuovo oggetto in ultima posizione nell'array "cars", rispettando la struttura degli altri elementi.
     Successivamente, rimuovi l'ultimo elemento della proprietà "trims" da ogni auto.
 */
 
+cars.push({
+  brand: "Alfa",
+  model: "Romeo",
+  color: "blu",
+  trims: ["titanium", "st", "active"],
+});
+
+for (let i = 0; i < cars.length; i++) {
+  cars[i].trims.pop();
+}
+
 /* ESERCIZIO 7
     Scrivi del codice per salvare il primo elemento della proprietà "trims" di ogni auto nel nuovo array "justTrims", sotto definito.
 */
-const justTrims = [];
+
+const newArray = function () {
+  const justTrims = [];
+  for (let i = 0; i < justTrims.length; i++) {
+    let trimx = justTrims[i].shift();
+    justTrims.push(trimx);
+  }
+  justTrims;
+};
+
+const justTrims = newArray();
+
+console.log(justTrims);
+console.log(cars);
 
 /* ESERCIZIO 8
     Cicla l'array "cars" e costruisci un if/else statament per mostrare due diversi messaggi in console. Se la prima lettera della proprietà
     "color" ha valore "b", mostra in console "Fizz". Altrimenti, mostra in console "Buzz".
 */
+
+for (let i = 0; i < cars.length; i++) {
+  if (cars[i].color.charAt(0) === "b") {
+    console.log("Fizz");
+  } else {
+    console.log("Buzz");
+  }
+}
 
 /* ESERCIZIO 9
     Utilizza un ciclo while per stampare in console i valori del seguente array numerico fino al raggiungimento del numero 32.

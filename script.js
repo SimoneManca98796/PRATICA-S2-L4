@@ -3,12 +3,26 @@
 */
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const areaRettangolo = function (l1, l2) {
+const areaRettangolo = (l1, l2) => {
   const result = l1 * l2;
   return result;
 };
 
 console.log("l'area è ", areaRettangolo(5, 10)); // l'area è 50
+
+const areaStoCazzo = (m1, m2 = 5) => {
+  const result = m1 * m2;
+  return result;
+};
+
+console.log("l'area di sto cazzo è " + areaStoCazzo(5));
+console.log("l'area di sto cazzo è " + areaStoCazzo(5, 10));
+
+const areaRettangolomerdoso = (lato, culo) => {
+  return lato * culo;
+};
+
+console.log(areaRettangolomerdoso(4, 5));
 
 /* ESERCIZIO 2
  Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri.
@@ -140,6 +154,7 @@ const upperFirst = function (sentence) {
   return arrayUpperCaseWords.join(" ");
 };
 
+pec;
 console.log(upperFirst("ciao mi chiamo Simone")); // OUTPUT: Ciao Mi Chiamo Simone
 
 /* SCRIVI QUI LA TUA RISPOSTA */
