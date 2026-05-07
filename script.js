@@ -10,20 +10,8 @@ const areaRettangolo = (l1, l2) => {
 
 console.log("l'area è ", areaRettangolo(5, 10)); // l'area è 50
 
-const areaStoCazzo = (m1, m2 = 5) => {
-  const result = m1 * m2;
-  return result;
-};
-
-console.log("l'area di sto cazzo è " + areaStoCazzo(5));
-console.log("l'area di sto cazzo è " + areaStoCazzo(5, 10));
-
-const areaRettangolomerdoso = (lato, culo) => {
-  return lato * culo;
-};
-
-console.log(areaRettangolomerdoso(4, 5));
-
+ ;
+ 
 /* ESERCIZIO 2
  Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri.
  La funzione deve ritornare la somma dei due parametri, ma se il valore dei due parametri è il medesimo deve invece tornare

@@ -3,7 +3,7 @@
 
 // esempi metodi array
 
-const names = ["Simone", "Stefano", "Sara"];
+const names = ["Simone", "Stefano", "Sara", "MONTESSKKKKKKK"];
 
 names.every((name) => {
   return name.charAt[0] === "S";
